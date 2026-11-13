@@ -95,7 +95,7 @@ def nav_html(p, current):
   <ul class="nav-links">
     <li>{a('index.html', 'Accueil')}</li>
     <li>{a('qui-sommes-nous/index.html', 'Qui sommes-nous ?')}</li>
-    <li class="has-sub">{a('cortizoaluminiummaroc/index.html', 'Cortizo Aluminium Maroc')}<div class="sub"><div class="sub-h">Gammes Cortizo</div>{prod}</div></li>
+    <li class="has-sub">{a('cortizoaluminiummaroc/index.html', 'Cortizo Aluminium Maroc')}<div class="sub">{prod}</div></li>
     <li class="has-sub">{a('vapamenagement/index.html', 'C3A Maroc')}<div class="sub"><a href="{p}vapamenagement/index.html">C3A Maroc</a><a href="{p}albertgeanucasablancamaroc/index.html">Albert Genau</a><hr><a href="{GROUP_URL}" target="_blank" rel="noopener">Groupe C3A — c3amaroc.com ↗</a></div></li>
     <li class="has-sub"><button class="nl" type="button" aria-haspopup="true">Nos services</button><div class="sub"><div class="sub-h">Nos services</div>{serv}</div></li>
     <li><a class="nl" href="#brochures" data-open-brochures>Nos brochures</a></li>
