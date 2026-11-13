@@ -292,6 +292,11 @@ def build_home():
   <div class="st rv" style="--d:80ms"><div class="st-val" data-count="37">37</div><div class="st-lbl">Ans d’expertise Albert Genau</div></div>
   <div class="st rv" style="--d:160ms"><div class="st-val" data-count="52">52</div><div class="st-lbl">Pays — réseau Albert Genau</div></div>
   <div class="st rv" style="--d:240ms"><div class="st-val" data-count="185">185</div><div class="st-lbl">km/h — résistance au vent des pergolas</div></div></div>'''
+    refs = [('marita', 'Marita Group'), ('maroc-bureau', 'Maroc Bureau'), ('ministere', 'Royaume du Maroc — Ministère des Affaires Étrangères, de la Coopération Africaine et des Marocains Résidant à l’Étranger'), ('ventec', 'Ventec'), ('magneti-marelli', 'Magneti Marelli')]
+    refs_count = len(refs)
+    def ref_set(hidden):
+        return ''.join(f'<div class="ref" {"aria-hidden=true" if hidden else "role=listitem"}><img src="assets/img/refs/{k}.png" alt="{"" if hidden else E(n)}" loading="lazy"></div>' for k, n in refs)
+    refs_track = '<div class="refs-track">' + ref_set(False) + ref_set(True) + ref_set(True) + ref_set(True) + '</div>'
     docs = ''.join(f'<a class="doc" href="{u}" target="_blank" rel="noopener"><em>PDF</em><span>{E(n)}</span><i>↓</i></a>' for n, u in DOCS)
     main = f'''
 <div class="marquee" aria-hidden="true"><div class="mtrack">{mq}{mq}</div></div>
@@ -304,8 +309,9 @@ def build_home():
   <div class="exp-grid">{cards}</div></section>
 {part}
 {stats}
-<section class="sec refs" aria-labelledby="rf-h"><div class="exp-hdr"><div class="rv"><div class="sl">Références</div><h2 class="h2" id="rf-h">Nos <em>References</em></h2></div></div>
-  <div class="refs-box rv"><img src="{img('f885adb8')}" alt="Nos références — logos de nos clients et partenaires" loading="lazy"></div></section>
+<section class="sec refs" aria-labelledby="rf-h"><div class="exp-hdr"><div class="rv"><div class="sl">Références</div><h2 class="h2" id="rf-h">Nos <em>References</em></h2></div>
+  <p class="exp-hdr-r rv">{refs_count} références qui nous font confiance.</p></div>
+  <div class="refs-band rv" role="list" aria-label="Nos références">{refs_track}</div></section>
 <section class="sec dark"><div class="pro-g">
   <div class="rv"><div class="sl">Documentation</div><h2 class="h2">Télécharger <em>brochures</em></h2><p class="lead" style="margin-top:20px">Retrouvez les brochures Cortizo : aluminium et façades.</p></div>
   <div class="docs rv" style="--d:100ms">{docs}</div></div></section>'''
