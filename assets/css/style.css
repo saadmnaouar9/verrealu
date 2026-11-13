@@ -435,3 +435,25 @@ html:not(.js) .rv{opacity:1;transform:none}
   .ref{flex:1 1 200px}
 }
 @media(max-width:640px){.refs-track{animation-duration:26s}.ref{padding:0 22px}}
+
+/* ==========================================================================
+   Header v2 — translucent glass bar, evenly spaced bold menu, blue accent
+   ========================================================================== */
+:root{--blue:#1e9bd8}
+.nav,.nav.over{background:rgba(255,255,255,.62);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom:.5px solid rgba(255,255,255,.55);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.nav.over.menu-open{background:var(--bg)}
+.nav-links{flex:1;justify-content:space-between;gap:0;margin-left:clamp(24px,4vw,64px)}
+.nav-links>li{flex:1 1 auto;justify-content:center}
+.nav-links a.nl,.nav-links button.nl,.nav.over .nav-links a.nl,.nav.over .nav-links button.nl{font-size:clamp(13px,1.1vw,16px);font-weight:600;letter-spacing:0;text-transform:none;color:#0a0a0a;position:relative}
+.nav-links a.nl:hover,.nav-links button.nl:hover,.nav-links a.nl.on,.has-sub:hover>.nl,.has-sub:focus-within>.nl,.nav.over .nav-links a.nl:hover,.nav.over .has-sub:hover>.nl{color:var(--blue)}
+.nav-links a.nl::before,.nav-links button.nl::before{content:'';position:absolute;left:0;right:0;bottom:2px;height:1.5px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.nav-links a.nl:hover::before,.nav-links a.nl.on::before,.has-sub:hover>.nl::before{transform:scaleX(1)}
+/* always the full-colour logo on the light bar */
+.nav .nav-logo .lg-w,.nav.over .nav-logo .lg-w{display:none}
+.nav .nav-logo .lg-c,.nav.over .nav-logo .lg-c{display:block}
+.nav.over .nav-burger span{background:#0a0a0a}
+.nav-cta{display:none}
+.sub{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.sub a{font-weight:500}
+.sub a:hover{color:var(--blue)}
+@media(min-width:1181px) and (max-width:1260px){.nav-links{display:none}.nav-burger{display:flex}}
