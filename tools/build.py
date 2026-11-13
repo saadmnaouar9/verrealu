@@ -54,13 +54,6 @@ GROUP_URL = 'http://www.c3amaroc.com'
 # (slug, nav label, original source key, short category)
 PRODUCTS = [
     ('corvisionplus', 'CorVisionPlus', 'corvisionplus'),
-    ('cor-vision-plus', 'Cor Vision', 'cor-vision-plus'),
-    ('cor4900coulissant', 'Cor 4900 Coulissant HI', 'cor4900coulissant'),
-    ('copie-de-cor-60-ouvrant-cache-rpt', 'Cor 70 Battant RPT', 'copie-de-cor-60-ouvrant-cache-rpt'),
-    ('copie-de-cor-vision-4900-coulissant-hi', 'Cor 70 Ouvrant Caché RPT', 'copie-de-cor-vision-4900-coulissant-hi'),
-    ('copie-de-cor-60-ouvrant-cache-rpt-1', 'Cor 2000 Coulissant', 'copie-de-cor-60-ouvrant-cache-rpt-1'),
-    ('copie-de-systeme-repliable', 'Porte Millenium 70 RPT', 'copie-de-système-repliable'),
-    ('accordeonv-4200-coulissant-rpt', 'Système Repliable', 'accordeonv-4200-coulissant-rpt'),
 ]
 SERVICES = [
     # slug, nav label, card title, image key, tag
@@ -381,13 +374,14 @@ def build_product(slug, label, src):
     # prev / next
     idx = [s for s, _, _ in PRODUCTS].index(slug)
     pv, nx = PRODUCTS[idx - 1], PRODUCTS[(idx + 1) % len(PRODUCTS)]
+    pn_nav = '' if len(PRODUCTS) < 2 else f'<nav class="pn" aria-label="Produits"><a href="../{pv[0]}/index.html"><small>← Précédent</small><b>{E(pv[1])}</b></a><a href="../{nx[0]}/index.html"><small>Suivant →</small><b>{E(nx[1])}</b></a></nav>'
     hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html'), (label, f'{slug}/index.html')],
                  E(title), bg=img(hero_bg) if hero_bg else None, tag=cat)
     main = f'''<section class="sec"><div class="pg-g">
   <div data-tabs class="rv"><div class="tabs" role="tablist"><button class="tab" role="tab" type="button">La description</button><button class="tab" role="tab" type="button">Données téchniques</button><button class="tab" role="tab" type="button">Essais</button></div>
     <div class="panel desc" role="tabpanel">{dh}</div><div class="panel" role="tabpanel" hidden>{th}</div><div class="panel" role="tabpanel" hidden>{eh}</div></div>
   <div class="sticky rv" style="--d:100ms">{g}</div></div></section>
-<nav class="pn" aria-label="Produits"><a href="../{pv[0]}/index.html"><small>← Précédent</small><b>{E(pv[1])}</b></a><a href="../{nx[0]}/index.html"><small>Suivant →</small><b>{E(nx[1])}</b></a></nav>'''
+{pn_nav}'''
     page(f'{slug}/index.html', f'{title} | Cortizo Aluminium Maroc | Verre alum Partner', f'{title} — {cat}. ' + (desc[0].lstrip('» ')[:150] if desc else ''),
          hero, main + cta_band(p), f'{slug}/index.html')
 
@@ -429,7 +423,8 @@ def build_cortizo():
     cats = [(L[0], ['Baies Coulissantes'], '492e5256'), (L[1], ['Portes-Fenêtres et Portes Battantes', 'Portes'], '330647c1')]
     sections = ''
     for name, m, k in cats:
-        sections += f'<div class="gal-title" style="margin-top:56px">{E(name)}</div><div class="cards">{grp(m)}</div>'
+        g_ = grp(m)
+        if g_: sections += f'<div class="gal-title" style="margin-top:56px">{E(name)}</div><div class="cards">{g_}</div>'
     facade = f'''<div class="gal-title" style="margin-top:56px">{E(L[2])}</div><div class="cards"><a class="pcard rv" href="../assets/docs/cortizo-facade.pdf" target="_blank" rel="noopener"><div class="im"><img class="ph" src="../{img('41f2dd14')}" alt="{E(L[2])}" loading="lazy"></div><div class="tx"><div><small>PDF</small><h3>Cortizo Facade.pdf</h3></div><span class="arr">↓</span></div></a></div>'''
     hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html')], 'Cortizo <em>Aluminium Maroc</em>', bg=img('492e5256'))
     main = f'''<section class="sec"><div class="about-g"><div class="rv"><div class="sl">Cortizo</div><h2 class="h2">{E(why_h)}</h2></div><div class="body rv" style="--d:100ms"><p>{E(why)}</p></div></div>
