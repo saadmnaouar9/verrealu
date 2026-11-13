@@ -106,8 +106,8 @@ def nav_html(p, current):
     <li class="has-sub">{a('vapamenagement/index.html', 'C3A Maroc')}<div class="sub"><a href="{p}vapamenagement/index.html">C3A Maroc</a><a href="{p}albertgeanucasablancamaroc/index.html">Albert Genau</a><hr><a href="{GROUP_URL}" target="_blank" rel="noopener">Groupe C3A — c3amaroc.com ↗</a></div></li>
     <li class="has-sub"><button class="nl" type="button" aria-haspopup="true">Nos services</button><div class="sub"><div class="sub-h">Nos services</div>{serv}</div></li>
     <li><a class="nl" href="#brochures" data-open-brochures>Nos brochures</a></li>
-    <li><a class="nl" href="#contact">Contactez-nous</a></li>
   </ul>
+  <a class="nav-cta" href="#contact">Contactez-nous</a>
   <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </header>
 <nav class="mob" aria-label="Menu mobile">
