@@ -316,12 +316,13 @@ def build_home():
 def build_about():
     p = '../'
     L = lines('qui-sommes-nous')
-    body = ''.join(f'<p>{E(x)}</p>' for x in L[1:])
+    rest = ''.join(f'<div class="ab-row rv" style="--d:{i*60}ms"><span class="ab-n">0{i}</span><p>{E(x)}</p></div>' for i, x in enumerate(L[2:], 1))
     hero = phero(p, [('Accueil', 'index.html'), ('Qui sommes-nous ?', 'qui-sommes-nous/index.html')], 'Qui <em>sommes-nous</em> ?',
                  bg=img('daa8147c'))
-    main = f'''<section class="sec"><div class="about-g"><div class="rv"><div class="sl">Verre Alum Partner</div><h2 class="h2">Menuiserie aluminium <em>haut de gamme</em></h2>
-  <div class="about-ctas"><a class="btn btn-primary" href="#contact">Devis personnalisé gratuit</a></div></div>
-  <div class="body rv" style="--d:100ms">{body}</div></div></section>'''
+    main = f'''<section class="sec"><div class="ab2"><aside class="ab-side rv"><div class="sl">Verre Alum Partner</div><h2 class="h2">Menuiserie aluminium <em>haut de gamme</em></h2>
+  <div class="ab-ph"><img src="../{img('daa8147c')}" alt="Verre Alum Partner" loading="lazy"></div>
+  <a class="btn btn-primary" href="#contact">Devis personnalisé gratuit</a></aside>
+  <div class="ab-main"><p class="ab-lead rv">{E(L[1])}</p>{rest}</div></div></section>'''
     page('qui-sommes-nous/index.html', 'Qui sommes-nous ? | Verre alum Partner', L[1], hero, main + cta_band(p), 'qui-sommes-nous/index.html')
 
 # --------------------------------------------------------------------------- PRODUCT PAGES
