@@ -585,3 +585,6 @@ html:not(.js) .rv{opacity:1;transform:none}
 .cards.one .pcard{flex:none;border:0;border-right:.5px solid var(--br2);border-bottom:.5px solid var(--br2);margin:0 -.5px -.5px 0}
 .cards.one .pcard .im{aspect-ratio:16/11}
 .cards.one .pcard:hover .arr{color:var(--cyan-d)}
+.cards.one{display:flex;flex-wrap:wrap;gap:14px;border:0}
+.cards.one .pcard{flex:0 1 320px;margin:0;border:.5px solid var(--br2)}
+@media(max-width:700px){.cards.one .pcard{flex:1 1 100%}}
