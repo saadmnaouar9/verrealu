@@ -484,7 +484,7 @@ def build_menuiserie():
     body = paras(L[2:], heads)
     main = f'''<section class="sec"><div class="pg-g"><div class="prose rv">{body}</div>
   <div class="sticky rv" style="--d:100ms">{side_gal(p, ['62e2c21b', 'bc83e7ad', '2fb6fd2a'], 'Menuiserie aluminium')}
-  <div class="gal-title">Partenaires</div><div style="background:#fff;padding:18px;display:flex;gap:24px;align-items:center;flex-wrap:wrap"><img src="../{img('a58f45ae')}" alt="Schüco" style="height:34px;width:auto"><img src="../{img('ad15ca33')}" alt="Cortizo" style="height:34px;width:auto"></div></div></div></section>'''
+  <div class="gal-title">Partenaires</div><div class="pt-row"><div class="pt-t rv"><img src="../{img('a58f45ae')}" alt="Schüco"><span>Schüco</span></div><div class="pt-t rv" style="--d:80ms"><img src="../{img('ad15ca33')}" alt="Cortizo"><span>Cortizo</span></div></div></div></section>'''
     page('menuiseriealuminium/index.html', 'Menuiserie Aluminium | Verre alum Partner', L[1], hero, main + cta_band(p), 'menuiseriealuminium/index.html')
 
 def build_cloisons():

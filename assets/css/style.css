@@ -613,3 +613,13 @@ html:not(.js) .rv{opacity:1;transform:none}
 #contact .btn-liquid{width:100%}
 @media(max-width:900px){#contact .contact-g{grid-template-columns:1fr}}
 [aria-labelledby="ab-h"] .body{text-align:right;margin-left:auto}
+
+/* Partenaires tiles */
+.pt-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pt-t{position:relative;background:#fff;border:.5px solid var(--br2);aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;overflow:hidden;transition:transform .7s var(--ease),box-shadow .7s var(--ease),border-color .4s}
+.pt-t img{max-width:62%;max-height:44px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.65;transition:filter .5s,opacity .5s,transform .8s var(--ease)}
+.pt-t span{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);opacity:0;transform:translateY(8px);transition:.6s var(--ease)}
+.pt-t::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.pt-t:hover{transform:translateY(-5px);box-shadow:0 22px 36px -22px rgba(28,50,112,.4);border-color:var(--cyan)}
+.pt-t:hover img{filter:none;opacity:1;transform:scale(1.08)}
+.pt-t:hover span{opacity:1;transform:none}.pt-t:hover::after{transform:none}
