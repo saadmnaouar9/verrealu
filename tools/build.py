@@ -427,7 +427,7 @@ def build_cortizo():
     pc += f'<a class="pcard rv" href="../assets/docs/cortizo-facade.pdf" target="_blank" rel="noopener"><div class="im"><img class="ph" src="../{img('41f2dd14')}" alt="{E(L[2])}" loading="lazy"></div><div class="tx"><div><small>{E(L[2])} · PDF</small><h3>Cortizo Facade.pdf</h3></div><span class="arr">↓</span></div></a>'
     sections = f'<div class="cards one">{pc}</div>'
     facade = ''
-    hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html')], 'Cortizo <em>Aluminium Maroc</em>', bg=img('492e5256'))
+    hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html')], 'Cortizo <em>Aluminium Maroc</em>', bg='assets/img/hero-cortizo.jpg')
     main = f'''<section class="sec"><div class="about-g"><div class="rv"><div class="sl">Cortizo</div><h2 class="h2">{E(why_h)}</h2></div><div class="body rv" style="--d:100ms"><p>{E(why)}</p></div></div>
   <div class="feat f4">{bl}</div>
   <div class="sl" style="margin-top:72px">Gammes</div>{sections}{facade}</section>'''
