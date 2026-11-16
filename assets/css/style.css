@@ -588,3 +588,4 @@ html:not(.js) .rv{opacity:1;transform:none}
 .cards.one{display:flex;flex-wrap:wrap;gap:14px;border:0}
 .cards.one .pcard{flex:0 1 320px;margin:0;border:.5px solid var(--br2)}
 @media(max-width:700px){.cards.one .pcard{flex:1 1 100%}}
+.cards.one{justify-content:center}
