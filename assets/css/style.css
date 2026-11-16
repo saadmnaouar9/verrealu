@@ -589,3 +589,26 @@ html:not(.js) .rv{opacity:1;transform:none}
 .cards.one .pcard{flex:0 1 320px;margin:0;border:.5px solid var(--br2)}
 @media(max-width:700px){.cards.one .pcard{flex:1 1 100%}}
 .cards.one{justify-content:center}
+
+/* Contact v2 — split card */
+#contact .contact-g{gap:0;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);box-shadow:0 40px 80px -40px rgba(28,50,112,.35)}
+#contact .contact-g>div:first-child{position:relative;overflow:hidden;padding:clamp(32px,4.5vw,64px);color:#fff;background:linear-gradient(155deg,var(--blue-x) 0%,var(--blue-d) 60%,var(--blue) 100%)}
+#contact .contact-g>div:first-child::after{content:"";position:absolute;right:-90px;bottom:-90px;width:300px;height:300px;border-radius:50%;border:1px solid rgba(40,200,208,.45);box-shadow:0 0 0 38px rgba(40,200,208,.07),0 0 0 80px rgba(40,200,208,.04);pointer-events:none}
+#contact .sl{color:var(--cyan)}#contact .sl::after{background:var(--cyan)}
+#contact .h2,#contact .h2 em{color:#fff}#contact .h2 em{color:var(--cyan)}
+#contact .ct-info{gap:0;margin-top:30px;position:relative;z-index:1}
+#contact .ct-info>div{padding:18px 0;border-bottom:.5px solid rgba(255,255,255,.2);transition:padding-left .5s var(--ease)}
+#contact .ct-info>div:hover{padding-left:10px}
+#contact .ct-info dt{color:var(--cyan);margin-bottom:6px}
+#contact .ct-info dd,#contact .ct-info a{color:#fff}
+#contact .ct-info a:hover{color:var(--cyan);text-decoration:none}
+#contact .social a{border-color:rgba(255,255,255,.4);color:#fff}
+#contact .map-link{position:relative;z-index:1;margin-top:26px}
+#contact .map-link .link-arrow{color:#fff;border-color:var(--cyan)}#contact .map-link .link-arrow:hover{color:var(--cyan)}
+#contact .form{background:#fff;padding:clamp(28px,4.5vw,64px);gap:20px;align-content:center}
+#contact .field{position:relative}
+#contact .field label{color:var(--blue)}
+#contact .field input,#contact .field textarea{background:var(--bg);border:0;border-bottom:1.5px solid transparent;padding:14px 16px;transition:border-color .4s,background .4s}
+#contact .field input:focus,#contact .field textarea:focus{background:#fff;box-shadow:0 0 0 1px rgba(40,200,208,.5);border-bottom-color:var(--cyan)}
+#contact .btn-liquid{width:100%}
+@media(max-width:900px){#contact .contact-g{grid-template-columns:1fr}}
