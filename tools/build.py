@@ -457,7 +457,7 @@ def build_albert():
 
 def build_c3a():
     p = '../'
-    hero = phero(p, [('Accueil', 'index.html'), ('C3A Maroc', 'vapamenagement/index.html')], 'Bien plus que <em>de l’aménagement</em>', bg=None)
+    hero = phero(p, [('Accueil', 'index.html'), ('C3A Maroc', 'vapamenagement/index.html')], 'Bien plus que <em>de l’aménagement</em>', bg='assets/img/hero-c3a.jpg')
     main = f'''<section class="sec"><div class="grp rv">
   <img class="grp-bg" src="../{img('826034be')}" alt="C3A Maroc" loading="lazy">
   <div class="grp-in"><div class="grp-k"><span>Groupe</span><b>C3A MAROC</b></div>
