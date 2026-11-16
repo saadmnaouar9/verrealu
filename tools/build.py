@@ -498,7 +498,7 @@ def build_cloisons():
             elif x.startswith('La cloison la plus fine'): out += f'<p class="note"><strong>{E(x)}</strong></p>'
             else: out += f'<p>{E(x)}</p>'
         return out
-    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Cloisons amovibles', 'cloisons-amovibles-abcd/index.html')], '<b>Cloisons</b> <em>amovibles</em>', L[1].title().replace("L'Aménagement", "l’aménagement") if False else L[1], bg=img('9481c659'))
+    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Cloisons amovibles', 'cloisons-amovibles-abcd/index.html')], '<b>Cloisons</b> <em>amovibles</em>', L[1].title().replace("L'Aménagement", "l’aménagement") if False else L[1], bg='assets/img/hero-cloisons.jpg')
     main = f'''<section class="sec"><div class="sl">{E(L[2])}</div>
   <div class="split top"><div class="rv"><h2 class="h2" style="margin-bottom:26px">{E(L[si].title())}</h2><div class="prose">{block(L[si+1:di])}</div></div>
   <div class="rv" style="--d:100ms"><h2 class="h2" style="margin-bottom:26px">{E(L[di].title())}</h2><div class="prose">{block(L[di+1:])}</div></div></div>
