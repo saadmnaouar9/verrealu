@@ -612,3 +612,4 @@ html:not(.js) .rv{opacity:1;transform:none}
 #contact .field input:focus,#contact .field textarea:focus{background:#fff;box-shadow:0 0 0 1px rgba(40,200,208,.5);border-bottom-color:var(--cyan)}
 #contact .btn-liquid{width:100%}
 @media(max-width:900px){#contact .contact-g{grid-template-columns:1fr}}
+[aria-labelledby="ab-h"] .body{text-align:right;margin-left:auto}
