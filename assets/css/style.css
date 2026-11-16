@@ -508,3 +508,59 @@ html:not(.js) .rv{opacity:1;transform:none}
 .sc-grid .g:hover::after{transform:none}
 .sc-grid .g:hover .zoom{background:#fff;color:#111}
 @media(max-width:900px){.sc-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Brand colours from the colour logo (blue #4068B8 / cyan #28C8D0) ===== */
+:root{--blue:#4068b8;--blue-d:#2b4a96;--blue-x:#1c3270;--cyan:#28c8d0;--cyan-d:#12a0aa;
+  --black:#1c3270;--black2:#2b4a96;--t1:#1c3270;--t2:#2b4a96;--br2:rgba(64,104,184,.22)}
+::selection{background:var(--cyan);color:#fff}
+:focus-visible{outline-color:var(--cyan)}
+/* texts */
+.h1,.h2,.prose h3,.prose h4,.feat h4,.cta-band h3,.about-g h2,.card h3,.pcard h3{color:var(--blue-d)}
+.h2 em,.h1 em,.cta-band h3 em{color:var(--cyan-d)}
+.sl{color:var(--blue)}.sl::after{background:var(--cyan);opacity:.6}
+.gal-title,.bn-c,.spot-th .th i,.gal .g.tech::before{color:var(--blue)}
+.bn-c b{color:var(--blue-d)}
+.prose a,.ct-info a,.body a{color:var(--blue)}
+.nav-links a.nl,.nav-links button.nl{color:var(--blue-d)}
+.nav.over .nav-links a.nl,.nav.over .nav-links button.nl{color:rgba(255,255,255,.85)}
+/* hovers */
+.nav-links a.nl:hover,.nav-links button.nl:hover,.nav-links a.nl.on,.has-sub:hover>.nl,.has-sub:focus-within>.nl{color:var(--cyan-d)}
+.nav.over .nav-links a.nl:hover,.nav.over .has-sub:hover>.nl{color:var(--cyan)}
+.sub a:hover{color:var(--blue);background:rgba(40,200,208,.12)}
+.crumb a:hover,.foot li a:hover,.foot p a:hover{color:var(--cyan)}
+.ct-info a:hover,.prose a:hover{color:var(--cyan-d)}
+.link-arrow{color:var(--blue-d);border-color:var(--blue)}.link-arrow:hover{color:var(--cyan-d);border-color:var(--cyan)}
+.nav-cta,.btn-primary,.btn-liquid{background:linear-gradient(100deg,var(--blue),var(--blue-d));color:#fff}
+.nav-cta:hover,.btn-primary:hover{background:var(--cyan);color:#fff}
+.nav.over .nav-cta{background:#fff;color:var(--blue-d)}.nav.over .nav-cta:hover{background:var(--cyan);color:#fff}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan-d)}
+.btn-inv{background:#fff;color:var(--blue-d)}.btn-inv:hover{background:var(--cyan);color:#fff}
+.btn-inv-ghost:hover,.hero .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+.btn-liquid:hover{color:#fff;box-shadow:0 0 20px rgba(40,200,208,.45),0 0 50px rgba(64,104,184,.3)}
+.grp-btn{background:#fff;color:var(--blue-d)}.grp-btn:hover{background:var(--cyan);color:#fff}
+.part:hover,.pcard:hover,.pn a:hover{background:rgba(40,200,208,.1)}
+.social a:hover{background:var(--cyan);border-color:var(--cyan);color:#fff}.foot .social a:hover{background:var(--cyan);color:#fff}
+.field input:focus,.field textarea:focus{border-color:var(--cyan)}
+.doc:hover{color:var(--cyan)}
+/* slides, dots, progress, tabs */
+.hdot.on{background-color:var(--cyan)}
+.tab[aria-selected=true]{color:var(--blue-d)}.tab::after,.tab[aria-selected=true]::after{background:var(--cyan)}
+.bn-d.on,.bn-pr,.spot-th .th::after,.ref::after{background:var(--cyan)}
+.bn-d{background:rgba(64,104,184,.25)}
+.bn-ar button{color:var(--blue-d);border-color:var(--blue)}.bn-ar button:hover{background:var(--cyan);border-color:var(--cyan);color:#fff}
+.spot-th .th.on{border-color:var(--cyan)}
+.spot-main .zoom,.gal .g.tech:hover .zoom{background:var(--blue-d);color:#fff}
+.gal .g.tech:hover,.spot-main:hover{border-color:var(--cyan)}
+.gal .g.tech::after{background:linear-gradient(transparent,rgba(28,50,112,.85))}
+.sc-grid .g{background-color:#14264f;border-color:rgba(40,200,208,.3)}
+.sc-grid .g::before{color:var(--cyan)}.sc-grid .g::after{background:var(--cyan)}
+.sc-grid .g:hover .zoom{background:var(--cyan);color:#fff}
+.exp-card:hover .exp-arr{color:var(--cyan)}
+.refs-track .ref:hover{background:rgba(40,200,208,.08)}
+/* dark areas follow the logo blue */
+.dark,.foot,.modal-box{background:var(--blue-x)}
+.grp::before{background:linear-gradient(90deg,rgba(20,38,90,.9) 0%,rgba(28,50,112,.7) 50%,rgba(28,50,112,.5) 100%)}
+#cur-ring{border-color:var(--cyan)}#cur{background:var(--cyan)}
+.dark .h2,.dark .h1,.dark h3,.dark h4,.foot h5,.foot h4,.modal-box h3,.modal-box .h2,.grp .h2,.phero h1,.hero h1,.hero .h1,.exp-card h3{color:#fff}
+.dark .h2 em,.dark .h1 em,.modal-box em,.phero h1 em,.hero h1 em,.grp .h2 em{color:var(--cyan)}
+.dark .sl,.foot .sl{color:var(--cyan)}
