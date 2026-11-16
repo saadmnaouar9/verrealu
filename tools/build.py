@@ -525,7 +525,7 @@ def build_parois():
     b3 = L[L.index('Professionnalisme'):L.index('Professionnalisme') + 6]
     pr = [pick(L, 'Nous étudions'), pick(L, 'Nous sélectionnons'), pick(L, 'Nos cloisons de douche')]
     pr[2] = pr[2]
-    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Parois de douches', 'paroisetcabinesdouches/index.html')], '<b>Parois</b> <em>de douche</em>', L[1], bg=img('d01289a8'))
+    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Parois de douches', 'paroisetcabinesdouches/index.html')], '<b>Parois</b> <em>de douche</em>', L[1], bg='assets/img/hero-parois.jpg')
     bd = lambda arr: '<div class="badges">' + ''.join(f'<div class="rv">{E(x)}</div>' for x in arr) + '</div>'
     main = f'''<section class="sec"><div class="pg-g"><div class="prose rv"><div class="sl">{E(L[2])}</div>{bd(badges1)}
   <h3>Verre Alum, le spécialiste des cloisons de douche en verre</h3>{''.join(f'<p>{E(x)}</p>' for x in pr)}{bd(b2)}
