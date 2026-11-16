@@ -447,7 +447,7 @@ def build_albert():
     sl_ = ''.join(f'<div class="bn-s"><img src="../{img(k)}" alt="Albert Genau — bannière {n}" loading="lazy"></div>' for n, k in enumerate(ks, 1))
     dots = ''.join(f'<button type="button" class="bn-d{" on" if n == 1 else ""}" aria-label="Bannière {n}"></button>' for n in range(1, 4))
     ban = f'<div class="bn rv" data-bn><div class="bn-t">{sl_}</div><div class="bn-bar"><span class="bn-c"><b>01</b> / 03</span><div class="bn-dots">{dots}</div><div class="bn-ar"><button type="button" class="bn-p" aria-label="Précédent">←</button><button type="button" class="bn-n" aria-label="Suivant">→</button></div></div><i class="bn-pr"></i></div>'
-    hero = phero(p, [('Accueil', 'index.html'), ('C3A Maroc', 'albertgeanucasablancamaroc/index.html')], 'Albert <em>Genau</em> · C3A Maroc', bg=img('9afcdf9e'), tag='Systèmes de vitrage')
+    hero = phero(p, [('Accueil', 'index.html'), ('C3A Maroc', 'albertgeanucasablancamaroc/index.html')], 'Albert <em>Genau</em> · C3A Maroc', bg='assets/img/hero-albert.jpg', tag='Systèmes de vitrage')
     main = f'''<section class="sec"><div class="sl">Systèmes</div><h2 class="h2 rv">Albert Genau, <em>systèmes de vitrage</em></h2><div class="chips rv">{chips}</div>
   <div style="margin:36px 0">{ban}</div>
   <div class="feat">{feats}</div>
