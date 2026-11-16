@@ -370,7 +370,8 @@ def build_product(slug, label, src):
     if photos:
         g += '<div class="gal-title">Réalisations</div><div class="gal">' + ''.join(gal_btn(p, k, f'{title} — {n}', 'big' if n == 1 else '') for n, k in enumerate(photos, 1)) + '</div>'
     if tech_imgs:
-        g += '<div class="gal-title">Profilés &amp; schémas</div><div class="gal">' + ''.join(gal_btn(p, k, f'{title} — profilé {n}', 'tech') for n, k in enumerate(tech_imgs, 1)) + '</div>'
+        thumbs = ''.join(f'<button class="th{" on" if n == 1 else ""}" type="button" data-src="{p}{img(k)}" aria-label="Profilé {n}"><img src="{p}{img(k)}" alt="" loading="lazy"><i>0{n}</i></button>' for n, k in enumerate(tech_imgs, 1))
+        g += f'<div class="gal-title">Profilés &amp; schémas</div><div class="spot" data-spot><button class="spot-main" type="button" data-lb="{p}{img(tech_imgs[0])}"><img src="{p}{img(tech_imgs[0])}" alt="{E(title)} — profilé"><span class="zoom">+ Agrandir</span></button><div class="spot-th">{thumbs}</div></div>'
     # prev / next
     idx = [s for s, _, _ in PRODUCTS].index(slug)
     pv, nx = PRODUCTS[idx - 1], PRODUCTS[(idx + 1) % len(PRODUCTS)]

@@ -223,3 +223,10 @@
     });
   }
 })();
+
+/* Profilés & schémas spotlight */
+(function(){document.querySelectorAll('[data-spot]').forEach(function(sp){
+  var m=sp.querySelector('.spot-main'),mi=m.querySelector('img');
+  sp.querySelectorAll('.th').forEach(function(t){t.addEventListener('click',function(){
+    sp.querySelectorAll('.th').forEach(function(x){x.classList.remove('on')});t.classList.add('on');
+    mi.style.opacity=0;setTimeout(function(){mi.src=t.dataset.src;m.dataset.lb=t.dataset.src;mi.style.opacity=1},220)})})})})();
