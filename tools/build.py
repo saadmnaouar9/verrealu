@@ -510,9 +510,11 @@ def build_murs():
     L = lines('mursrideaux')
     chips = ''.join(f'<span class="chip2">{E(x)}</span>' for x in L[2:6])
     hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Murs Rideaux', 'mursrideaux/index.html')], '<b>Murs</b> <em>rideaux</em>', L[0], bg=img('37f2dad8'))
-    imgs = ''.join(gal_btn(p, k, f'Murs rideaux {n}', 'tech') for n, k in enumerate(['2ac4221c', '2ac3e144', '42b991c6', 'bdc44ab9', '795ea6a3'], 1))
+    mk = ['2ac4221c', '2ac3e144', '42b991c6', 'bdc44ab9', '795ea6a3']
+    mth = ''.join(f'<button class="th{" on" if n == 1 else ""}" type="button" data-src="{p}{img(k)}" aria-label="Image {n}"><img src="{p}{img(k)}" alt="" loading="lazy"><i>0{n}</i></button>' for n, k in enumerate(mk, 1))
+    imgs = f'<div class="spot" data-spot><button class="spot-main" type="button" data-lb="{p}{img(mk[0])}"><img src="{p}{img(mk[0])}" alt="Murs rideaux"><span class="zoom">+ Agrandir</span></button><div class="spot-th">{mth}</div></div>'
     main = f'''<section class="sec"><div class="pg-g"><div class="prose rv"><div class="sl">Façades</div><div class="chips">{chips}</div>{paras(L[6:])}</div>
-  <div class="sticky rv" style="--d:100ms"><div class="gal">{imgs}</div></div></div></section>'''
+  <div class="sticky rv" style="--d:100ms">{imgs}</div></div></section>'''
     page('mursrideaux/index.html', 'Murs Rideaux & habillage des façades | Verre alum Partner', L[0], hero, main + cta_band(p), 'mursrideaux/index.html')
 
 def build_parois():
