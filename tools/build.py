@@ -480,7 +480,7 @@ def build_menuiserie():
     p = '../'
     L = lines('menuiseriealuminium')
     heads = {L[3], L[5], L[8]}
-    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Menuiserie Aluminium', 'menuiseriealuminium/index.html')], '<b>Menuiserie</b> <em>Aluminium</em>', L[1], bg=img('ca3c68cf'))
+    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Menuiserie Aluminium', 'menuiseriealuminium/index.html')], '<b>Menuiserie</b> <em>Aluminium</em>', L[1], bg='assets/img/hero-menuiserie.jpg')
     body = paras(L[2:], heads)
     main = f'''<section class="sec"><div class="pg-g"><div class="prose rv">{body}</div>
   <div class="sticky rv" style="--d:100ms">{side_gal(p, ['62e2c21b', 'bc83e7ad', '2fb6fd2a'], 'Menuiserie aluminium')}
