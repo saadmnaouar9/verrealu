@@ -477,3 +477,21 @@ html:not(.js) .rv{opacity:1;transform:none}
 .grp .lead{color:rgba(255,255,255,.85);margin:20px 0 30px}
 .grp-btn{background:#fff;color:#111;border-color:#fff}
 @media(max-width:760px){.grp-in{grid-template-columns:1fr;gap:24px;align-content:end}.grp-k{border:0;padding:0;flex-direction:row;align-items:baseline;gap:12px}.grp::before{background:linear-gradient(0deg,rgba(10,10,10,.9),rgba(10,10,10,.35))}}
+
+/* Albert Genau banner carousel */
+.bn{position:relative;background:#e8e7e3;border:.5px solid rgba(0,0,0,.14);overflow:hidden}
+.bn-t{display:flex;transition:transform 1.1s var(--ease)}
+.bn-s{flex:0 0 100%;aspect-ratio:1920/450;overflow:hidden;background:#fff}
+.bn-s img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 6s linear}
+.bn-s:first-child img,.bn .bn-s img{transform:scale(1.04)}
+.bn-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;background:var(--bg);border-top:.5px solid rgba(0,0,0,.14)}
+.bn-c{font-size:10px;letter-spacing:.3em;color:var(--t5)}.bn-c b{font-weight:500;color:#111;font-size:13px}
+.bn-dots{display:flex;gap:8px}
+.bn-d{width:28px;height:2px;border:0;padding:0;background:rgba(0,0,0,.2);transition:background .4s,width .5s var(--ease)}
+.bn-d.on{background:#111;width:52px}
+.bn-ar{display:flex;gap:8px}
+.bn-ar button{width:38px;height:38px;border:.5px solid rgba(0,0,0,.3);background:transparent;font-size:15px;transition:background .3s,color .3s}
+.bn-ar button:hover{background:#111;color:#fff}
+.bn-pr{position:absolute;left:0;bottom:65px;height:2px;background:#111;width:100%;transform-origin:left;animation:bnp 5s linear infinite}
+@keyframes bnp{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:700px){.bn-s{aspect-ratio:16/7}.bn-bar{padding:10px 12px}.bn-d{width:16px}.bn-d.on{width:30px}.bn-pr{bottom:59px}}

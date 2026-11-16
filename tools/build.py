@@ -443,10 +443,13 @@ def build_albert():
     for h in ['Un Large Réseau', 'Qualité Approuvée', 'Produits Innovants', "37 ans d'expertise"]:
         feats += f'<div class="rv"><h4>{E(h)}</h4><p>{E(L[L.index(h) + 1])}</p></div>'
     diag = ''.join(gal_btn(p, k, f'Système Albert Genau {n}', 'tech') for n, k in enumerate(['c536c6d5', '5dd7f879', '39216f7e', '7b7a8578'], 1))
-    ban = ''.join(f'<div class="photo rv" style="aspect-ratio:1920/450;--d:{n*80}ms"><img src="../{img(k)}" alt="Albert Genau — bannière {n}" loading="lazy"></div>' for n, k in enumerate(['4818a098', '9afcdf9e', '880922b8'], 1))
+    ks = ['4818a098', '9afcdf9e', '880922b8']
+    sl_ = ''.join(f'<div class="bn-s"><img src="../{img(k)}" alt="Albert Genau — bannière {n}" loading="lazy"></div>' for n, k in enumerate(ks, 1))
+    dots = ''.join(f'<button type="button" class="bn-d{" on" if n == 1 else ""}" aria-label="Bannière {n}"></button>' for n in range(1, 4))
+    ban = f'<div class="bn rv" data-bn><div class="bn-t">{sl_}</div><div class="bn-bar"><span class="bn-c"><b>01</b> / 03</span><div class="bn-dots">{dots}</div><div class="bn-ar"><button type="button" class="bn-p" aria-label="Précédent">←</button><button type="button" class="bn-n" aria-label="Suivant">→</button></div></div><i class="bn-pr"></i></div>'
     hero = phero(p, [('Accueil', 'index.html'), ('C3A Maroc', 'albertgeanucasablancamaroc/index.html')], 'Albert <em>Genau</em> · C3A Maroc', bg=img('9afcdf9e'), tag='Systèmes de vitrage')
     main = f'''<section class="sec"><div class="sl">Systèmes</div><h2 class="h2 rv">Albert Genau, <em>systèmes de vitrage</em></h2><div class="chips rv">{chips}</div>
-  <div style="display:grid;gap:12px;margin:36px 0">{ban}</div>
+  <div style="margin:36px 0">{ban}</div>
   <div class="feat">{feats}</div>
   <div class="sc-grid">{diag}</div>
   <p style="margin-top:44px"><a class="link-arrow" href="{GROUP_URL}" target="_blank" rel="noopener">Consultez nos Produits</a></p></section>'''
