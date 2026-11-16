@@ -537,7 +537,7 @@ def build_pergolas():
     p = '../'
     L = lines('pergolasbioclimatiques')
     j = lambda a, b: norm(a + ' ' + b)
-    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Pergolas & Verandas', 'pergolasbioclimatiques/index.html')], '<b>Pergolas</b> <em>bioclimatiques</em>', 'ET TOITURES COULISSANTES', bg=img('dec6f397'))
+    hero = phero(p, [('Accueil', 'index.html'), ('Nos services', 'index.html#services'), ('Pergolas & Verandas', 'pergolasbioclimatiques/index.html')], '<b>Pergolas</b> <em>bioclimatiques</em>', 'ET TOITURES COULISSANTES', bg='assets/img/hero-pergolas.jpg')
     items = L[2:]
     out = ''
     k = 0
