@@ -378,7 +378,7 @@ def build_product(slug, label, src):
     pv, nx = PRODUCTS[idx - 1], PRODUCTS[(idx + 1) % len(PRODUCTS)]
     pn_nav = '' if len(PRODUCTS) < 2 else f'<nav class="pn" aria-label="Produits"><a href="../{pv[0]}/index.html"><small>← Précédent</small><b>{E(pv[1])}</b></a><a href="../{nx[0]}/index.html"><small>Suivant →</small><b>{E(nx[1])}</b></a></nav>'
     hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html'), (label, f'{slug}/index.html')],
-                 E(title), bg=img(hero_bg) if hero_bg else None, tag=cat)
+                 E(title), bg='assets/img/hero-corvision.jpg', tag=cat)
     main = f'''<section class="sec"><div class="pg-g">
   <div data-tabs class="rv"><div class="tabs" role="tablist"><button class="tab" role="tab" type="button">La description</button><button class="tab" role="tab" type="button">Données téchniques</button><button class="tab" role="tab" type="button">Essais</button></div>
     <div class="panel desc" role="tabpanel">{dh}</div><div class="panel" role="tabpanel" hidden>{th}</div><div class="panel" role="tabpanel" hidden>{eh}</div></div>
