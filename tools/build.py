@@ -455,9 +455,12 @@ def build_albert():
 def build_c3a():
     p = '../'
     hero = phero(p, [('Accueil', 'index.html'), ('C3A Maroc', 'vapamenagement/index.html')], 'Bien plus que <em>de l’aménagement</em>', bg=None)
-    main = f'''<section class="sec"><div class="split"><div class="photo rv" style="background:#fff"><img src="../{img('826034be')}" alt="C3A Maroc" loading="lazy" style="object-fit:contain"></div>
-  <div class="rv" style="--d:100ms"><div class="sl">Groupe C3A MAROC</div><h2 class="h2">Verre Alum Partner <em>& C3A Maroc</em></h2>
-  <p class="lead" style="margin:22px 0 32px">Verre Alum Partner fait partie du Groupe C3A MAROC.</p><a class="link-arrow" href="{GROUP_URL}" target="_blank" rel="noopener">www.c3amaroc.com</a></div></div></section>'''
+    main = f'''<section class="sec"><div class="grp rv">
+  <img class="grp-bg" src="../{img('826034be')}" alt="C3A Maroc" loading="lazy">
+  <div class="grp-in"><div class="grp-k"><span>Groupe</span><b>C3A MAROC</b></div>
+  <div class="grp-c"><div class="sl">Notre groupe</div><h2 class="h2">Verre Alum Partner <em>&amp; C3A Maroc</em></h2>
+  <p class="lead">Verre Alum Partner fait partie du Groupe C3A MAROC.</p>
+  <a class="btn grp-btn" href="{GROUP_URL}" target="_blank" rel="noopener">www.c3amaroc.com <span aria-hidden="true">↗</span></a></div></div></div></section>'''
     page('vapamenagement/index.html', 'C3A Maroc | Verre alum Partner', "Bien plus que de l'aménagement — Groupe C3A MAROC.", hero, main + cta_band(p), 'vapamenagement/index.html')
 
 # --------------------------------------------------------------------------- SERVICE PAGES
