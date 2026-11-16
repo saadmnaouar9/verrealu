@@ -636,3 +636,23 @@ html:not(.js) .rv{opacity:1;transform:none}
 [aria-labelledby="ab-h"] .body p:first-child{font-size:clamp(15px,1.25vw,17px);font-weight:400;color:var(--blue-d);line-height:1.85}
 [aria-labelledby="ab-h"] .body p+p{margin-top:18px;padding-top:18px;border-top:.5px solid var(--br2)}
 @media(max-width:900px){[aria-labelledby="ab-h"] .about-g{grid-template-columns:1fr}[aria-labelledby="ab-h"] .body{text-align:left;padding-right:clamp(28px,4vw,52px)}[aria-labelledby="ab-h"] .body::before{right:auto;left:0}[aria-labelledby="ab-h"] .body::after{left:auto;right:20px}}
+
+/* Home about v3 — depth & motion */
+[aria-labelledby="ab-h"]{position:relative;overflow:hidden}
+[aria-labelledby="ab-h"]::before{content:"";position:absolute;right:-140px;top:50%;width:520px;height:520px;margin-top:-260px;border-radius:50%;border:1px dashed rgba(64,104,184,.35);animation:abspin 60s linear infinite;pointer-events:none}
+[aria-labelledby="ab-h"]::after{content:"";position:absolute;left:-120px;bottom:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(40,200,208,.22),transparent 70%);pointer-events:none;animation:abfloat 9s ease-in-out infinite}
+@keyframes abspin{to{transform:rotate(360deg)}}
+@keyframes abfloat{50%{transform:translate(30px,-24px)}}
+[aria-labelledby="ab-h"] .about-g{position:relative;z-index:1}
+[aria-labelledby="ab-h"] .body.rv{clip-path:inset(0 0 0 100%);transform:translateX(40px)}
+[aria-labelledby="ab-h"] .body.rv.in{clip-path:inset(0);transform:none;transition:clip-path 1.2s var(--ease),transform 1.2s var(--ease),box-shadow .8s var(--ease)}
+[aria-labelledby="ab-h"] .body.rv.in:hover{transform:translateY(-4px)}
+[aria-labelledby="ab-h"] .body p{opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[aria-labelledby="ab-h"] .body.in p{opacity:1;transform:none}
+[aria-labelledby="ab-h"] .body.in p:nth-child(1){transition-delay:.5s}[aria-labelledby="ab-h"] .body.in p:nth-child(2){transition-delay:.7s}
+[aria-labelledby="ab-h"] .h2 em{background:linear-gradient(90deg,var(--cyan-d),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+[aria-labelledby="ab-h"] .about-ctas .btn{position:relative;overflow:hidden}
+[aria-labelledby="ab-h"] .about-ctas .btn-primary::after{content:"→";margin-left:12px;display:inline-block;transition:transform .5s var(--ease)}
+[aria-labelledby="ab-h"] .about-ctas .btn-primary:hover::after{transform:translateX(6px)}
+@media(prefers-reduced-motion:reduce){[aria-labelledby="ab-h"]::before,[aria-labelledby="ab-h"]::after{animation:none}}
+@media(max-width:900px){[aria-labelledby="ab-h"]::before{display:none}}
