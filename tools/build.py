@@ -423,11 +423,10 @@ def build_cortizo():
                 out += f'<a class="pcard rv" href="../{s}/index.html"><div class="im"><img src="../{im_src}" alt="{E(l)}" loading="lazy"></div><div class="tx"><div><small>{E(LL[i-1])}</small><h3>{E(l)}</h3></div><span class="arr">→</span></div></a>'
         return out
     cats = [(L[0], ['Baies Coulissantes'], '492e5256'), (L[1], ['Portes-Fenêtres et Portes Battantes', 'Portes'], '330647c1')]
-    sections = ''
-    for name, m, k in cats:
-        g_ = grp(m)
-        if g_: sections += f'<div class="gal-title" style="margin-top:56px">{E(name)}</div><div class="cards">{g_}</div>'
-    facade = f'''<div class="gal-title" style="margin-top:56px">{E(L[2])}</div><div class="cards"><a class="pcard rv" href="../assets/docs/cortizo-facade.pdf" target="_blank" rel="noopener"><div class="im"><img class="ph" src="../{img('41f2dd14')}" alt="{E(L[2])}" loading="lazy"></div><div class="tx"><div><small>PDF</small><h3>Cortizo Facade.pdf</h3></div><span class="arr">↓</span></div></a></div>'''
+    pc = ''.join(grp(m) for _, m, _ in cats)
+    pc += f'<a class="pcard rv" href="../assets/docs/cortizo-facade.pdf" target="_blank" rel="noopener"><div class="im"><img class="ph" src="../{img('41f2dd14')}" alt="{E(L[2])}" loading="lazy"></div><div class="tx"><div><small>{E(L[2])} · PDF</small><h3>Cortizo Facade.pdf</h3></div><span class="arr">↓</span></div></a>'
+    sections = f'<div class="cards one">{pc}</div>'
+    facade = ''
     hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html')], 'Cortizo <em>Aluminium Maroc</em>', bg=img('492e5256'))
     main = f'''<section class="sec"><div class="about-g"><div class="rv"><div class="sl">Cortizo</div><h2 class="h2">{E(why_h)}</h2></div><div class="body rv" style="--d:100ms"><p>{E(why)}</p></div></div>
   <div class="feat f4">{bl}</div>

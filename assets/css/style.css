@@ -579,3 +579,9 @@ html:not(.js) .rv{opacity:1;transform:none}
 .ab-row:hover{padding-left:14px;background:linear-gradient(90deg,rgba(40,200,208,.1),transparent 70%)}
 .ab-row:hover .ab-n{color:var(--blue)}
 @media(max-width:900px){.ab2{grid-template-columns:1fr}.ab-side{position:static}.ab-row{grid-template-columns:40px 1fr}}
+
+/* Cortizo — all ranges in one block */
+.cards.one{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:0;margin-top:28px;border:.5px solid var(--br2)}
+.cards.one .pcard{flex:none;border:0;border-right:.5px solid var(--br2);border-bottom:.5px solid var(--br2);margin:0 -.5px -.5px 0}
+.cards.one .pcard .im{aspect-ratio:16/11}
+.cards.one .pcard:hover .arr{color:var(--cyan-d)}
