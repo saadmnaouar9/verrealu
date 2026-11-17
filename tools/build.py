@@ -268,8 +268,9 @@ def build_home():
     }
     for i, (slug, _, title, k, tag) in enumerate(SERVICES, 1):
         href = f'{slug}/index.html' if slug else '#contact'
-        cards += f'''<a class="exp-card rv" style="--d:{(i % 3) * 90}ms" href="{href}"><div class="exp-media"><div class="bgi" style="background-image:url({img(k)})"></div><span class="exp-num">{i:02d}</span><span class="exp-tag">{E(tag)}</span></div>
-  <div class="exp-body"><h3 class="exp-name">{E(title)}</h3><p class="exp-desc">{E(descs[slug])}</p><span class="exp-more">Découvrir <span class="exp-arr">→</span></span></div></a>'''
+        cards += f'''<a class="exp-card rv" style="--d:{(i % 3) * 90}ms" href="{href}"><div class="bgi" style="background-image:url({img(k)})"></div>
+  <div><div class="exp-num">{i:02d}</div><h3 class="exp-name">{E(title)}</h3><p class="exp-desc">{E(descs[slug])}</p></div>
+  <div class="exp-bot"><span class="exp-tag">{E(tag)}</span><span class="exp-arr">→</span></div></a>'''
     alb = lines('albertgeanucasablancamaroc')
     cort = lines('cortizoaluminiummaroc')
     part = f'''<section class="sec" aria-labelledby="pt-h"><div class="exp-hdr"><div class="rv"><div class="sl">Nos marques</div><h2 class="h2" id="pt-h">Des marques <em>de référence</em></h2></div>
