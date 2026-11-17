@@ -404,9 +404,9 @@ def build_cortizo():
     blocks = [('GAMME DE COULEURS ILLIMITÉES', 'GAMME', '809ef0a8'), ('CORTIZO ECOEFFICIENT', 'CORTIZO ECO', '491a1a01'),
               ("STYLE D'AVANT-GARDE", 'STYLE', 'd2e14e8e'), ('QUALITÉ', 'QUALITÉ', 'a743b24a')]
     bl = ''
-    for t, _, ic in blocks:
+    for n, (t, _, ic) in enumerate(blocks, 1):
         j = L.index(t)
-        bl += f'<div class="rv"><img src="../{img(ic)}" alt="" width="40" height="40" style="width:40px;height:auto;margin-bottom:20px;mix-blend-mode:multiply;opacity:.8"><h4>{E(nice(t))}</h4><p>{E(L[j + 1])}</p></div>'
+        bl += f'<div class="wy rv" style="--d:{(n-1)*120}ms"><span class="wy-n">0{n}</span><div class="wy-ic"><img src="../{img(ic)}" alt="" loading="lazy"></div><h4>{E(nice(t))}</h4><p>{E(L[j + 1])}</p><i class="wy-bar"></i></div>'
     # the why-paragraph continues in the original after 'et dans des laboratoires...' ; join continuation lines
     why = why_p
     j = L.index(why_p)
@@ -433,7 +433,7 @@ def build_cortizo():
     facade = ''
     hero = phero(p, [('Accueil', 'index.html'), ('Cortizo Aluminium Maroc', 'cortizoaluminiummaroc/index.html')], 'Cortizo <em>Aluminium Maroc</em>', bg='assets/img/hero-cortizo.jpg')
     main = f'''<section class="sec"><div class="about-g"><div class="rv"><div class="sl">Cortizo</div><h2 class="h2">{E(why_h)}</h2></div><div class="body rv" style="--d:100ms"><p>{E(why)}</p></div></div>
-  <div class="feat f4">{bl}</div>
+  <div class="why-g">{bl}</div>
   <div class="sl" style="margin-top:72px">Gammes</div>{sections}{facade}</section>'''
     page('cortizoaluminiummaroc/index.html', 'Cortizo Aluminium Maroc | Verre alum Partner', why[:155], hero, main + cta_band(p), 'cortizoaluminiummaroc/index.html')
 

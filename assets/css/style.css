@@ -642,3 +642,28 @@ html:not(.js) .rv{opacity:1;transform:none}
 .ab-pts i{font:italic 400 18px/1 'Playfair Display',serif;color:var(--cyan-d);text-transform:none;letter-spacing:0}
 .ab-txt .about-ctas{justify-content:flex-start}
 @media(max-width:900px){.ab-split{grid-template-columns:1fr}.ab-media{aspect-ratio:4/3;margin:0 22px 22px 0}.ab-badge{left:12px}}
+
+/* cortizo why-cards */
+.why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:48px 0;position:relative}
+.why-g::before{content:"";position:absolute;left:0;top:62px;height:1px;width:100%;background:linear-gradient(90deg,var(--blue),var(--cyan),transparent);transform:scaleX(0);transform-origin:left;transition:transform 2s var(--ease) .3s;opacity:.5}
+.why-g:has(.in)::before{transform:scaleX(1)}
+.wy{position:relative;overflow:hidden;background:#fff;border:.5px solid var(--br2);padding:34px 28px 38px;isolation:isolate;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.wy::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(40,200,208,.2),transparent 65%)}
+.wy:hover{transform:translateY(-8px);box-shadow:0 30px 55px -30px rgba(28,50,112,.5)}
+.wy:hover::before{opacity:1}
+.wy-n{position:absolute;right:18px;top:6px;font:italic 400 64px/1 'Playfair Display',serif;color:var(--blue);opacity:.08;transition:opacity .5s,transform .8s var(--ease)}
+.wy:hover .wy-n{opacity:.2;transform:translateY(8px) scale(1.1)}
+.wy-ic{position:relative;width:64px;height:64px;border-radius:50%;background:var(--bg);display:grid;place-items:center;margin-bottom:26px;animation:wyfloat 5s ease-in-out infinite}
+.wy:nth-child(2) .wy-ic{animation-delay:-1.2s}.wy:nth-child(3) .wy-ic{animation-delay:-2.4s}.wy:nth-child(4) .wy-ic{animation-delay:-3.6s}
+.wy-ic::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid var(--cyan);animation:wyring 3s ease-out infinite}
+.wy-ic img{width:30px;height:30px;object-fit:contain;mix-blend-mode:multiply;filter:brightness(.6) contrast(1.5);transition:transform .6s var(--ease)}
+.wy:hover .wy-ic img{transform:rotate(-8deg) scale(1.18)}
+.wy h4{font-size:17px;font-weight:300;color:var(--blue-d);margin-bottom:12px}
+.wy p{font-size:13px;line-height:1.85;color:var(--t4);font-weight:300;margin:0}
+.wy-bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .8s var(--ease)}
+.wy:hover .wy-bar{width:100%}
+@keyframes wyfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes wyring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+@media(max-width:1024px){.why-g{grid-template-columns:repeat(2,1fr)}.why-g::before{display:none}}
+@media(max-width:640px){.why-g{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.wy-ic,.wy-ic::after{animation:none}}

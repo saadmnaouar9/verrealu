@@ -227,3 +227,11 @@
   var sx=0;t.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
   t.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));auto()}});
   go(0);auto()})})();
+
+/* spotlight on why-cards */
+document.querySelectorAll('.wy').forEach(function (c) {
+  c.addEventListener('mousemove', function (e) {
+    var r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
