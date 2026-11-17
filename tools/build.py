@@ -293,10 +293,14 @@ def build_home():
     docs = ''.join(f'<a class="doc" href="{u}" target="_blank" rel="noopener"><em>PDF</em><span>{E(n)}</span><i>↓</i></a>' for n, u in DOCS)
     main = f'''
 <div class="marquee" aria-hidden="true"><div class="mtrack">{mq}{mq}</div></div>
-<section class="sec" aria-labelledby="ab-h"><div class="ab-frame rv"><div class="ab-card">
-  <div class="ab-pill">Qui sommes-nous ?</div><h2 class="h2" id="ab-h">Verre Alum Partner, <em>menuiserie aluminium haut de gamme</em></h2>
-  <div class="body">{''.join(f'<p>{E(x)}</p>' for x in paras[:2])}</div>
-  <div class="about-ctas"><a class="btn btn-primary" href="qui-sommes-nous/index.html">Qui sommes-nous ?</a><a class="btn btn-ghost" href="#contact">Devis gratuit</a></div></div></div></section>
+<section class="sec" aria-labelledby="ab-h"><div class="ab-split">
+  <div class="ab-media rv"><img src="{img('daa8147c')}" alt="Verre Alum Partner" loading="lazy"><div class="ab-badge"><b>Haut de gamme</b><span>Menuiserie aluminium</span></div></div>
+  <div class="ab-txt rv" style="--d:100ms">
+    <div class="sl">Qui sommes-nous ?</div><h2 class="h2" id="ab-h">Verre Alum Partner, <em>menuiserie aluminium haut de gamme</em></h2>
+    <div class="body">{''.join(f'<p>{E(x)}</p>' for x in paras[:2])}</div>
+    <ul class="ab-pts"><li><i>01</i>Conception</li><li><i>02</i>Fabrication</li><li><i>03</i>Installation</li></ul>
+    <div class="about-ctas"><a class="btn btn-primary" href="qui-sommes-nous/index.html">Qui sommes-nous ?</a><a class="btn btn-ghost" href="#contact">Devis gratuit</a></div>
+  </div></div></section>
 <section class="sec" id="services" style="padding-top:0" aria-labelledby="sv-h"><div class="exp-hdr"><div class="rv"><div class="sl">Nos services</div><h2 class="h2" id="sv-h">TOUS NOS <em>services</em></h2></div>
   <p class="exp-hdr-r rv">Tous type de menuiserie aluminium — du sur-mesure résidentiel aux façades tertiaires.</p></div>
   <div class="exp-grid">{cards}</div></section>
