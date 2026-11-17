@@ -642,3 +642,25 @@ html:not(.js) .rv{opacity:1;transform:none}
 .ab-pts i{font:italic 400 18px/1 'Playfair Display',serif;color:var(--cyan-d);text-transform:none;letter-spacing:0}
 .ab-txt .about-ctas{justify-content:flex-start}
 @media(max-width:900px){.ab-split{grid-template-columns:1fr}.ab-media{aspect-ratio:4/3;margin:0 22px 22px 0}.ab-badge{left:12px}}
+
+/* services cards v2 */
+.exp-grid{gap:28px;background:none}
+.exp-card{min-height:0;padding:0;color:var(--t3);background:#fff;border:.5px solid var(--br2);justify-content:flex-start;overflow:hidden;transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+.exp-card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -28px rgba(28,50,112,.45)}
+.exp-card::before,.exp-card::after{display:none}
+.exp-media{position:relative;aspect-ratio:4/3;overflow:hidden}
+.exp-card .bgi{z-index:0}
+.exp-media::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .7s var(--ease)}
+.exp-card:hover .exp-media::after{width:100%}
+.exp-num{position:absolute;z-index:1;top:16px;left:18px;margin:0;font:italic 400 22px/1 'Playfair Display',serif;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.exp-tag{position:absolute;z-index:1;right:14px;bottom:14px;background:rgba(255,255,255,.92);color:var(--blue-d);border:0;padding:6px 11px}
+.exp-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.exp-card h3.exp-name{color:var(--blue-d);font-weight:300}
+.exp-desc{color:var(--t3);max-width:none;flex:1}
+.exp-more{margin-top:22px;padding-top:16px;border-top:.5px solid var(--br2);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:flex;justify-content:space-between;align-items:center}
+.exp-more .exp-arr{color:var(--cyan-d)}
+.exp-card:hover .exp-arr{color:var(--cyan-d)}
+@media(max-width:1024px){.exp-grid{gap:20px}}
+@media(max-width:640px){.exp-card{min-height:0}}
+@media(min-width:1025px){.exp-card:last-child:nth-child(3n+1){display:grid;grid-template-columns:1fr 1fr}.exp-card:last-child:nth-child(3n+1) .exp-media{aspect-ratio:auto;min-height:340px}.exp-card:last-child:nth-child(3n+1) .exp-body{justify-content:center;padding:40px}.exp-card:last-child:nth-child(3n+1) .exp-desc{flex:0}}
+@media(min-width:641px) and (max-width:1024px){.exp-card:last-child:nth-child(2n+1) .exp-media{aspect-ratio:21/9}}
