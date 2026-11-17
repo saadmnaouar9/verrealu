@@ -624,6 +624,11 @@ html:not(.js) .rv{opacity:1;transform:none}
 .pt-t:hover img{filter:none;opacity:1;transform:scale(1.08)}
 .pt-t:hover span{opacity:1;transform:none}.pt-t:hover::after{transform:none}
 
-/* Home — about block (simple) */
-[aria-labelledby="ab-h"] .about-g{align-items:start}
-[aria-labelledby="ab-h"] .body{text-align:right;margin-left:auto}
+/* Home — about block (centered card) */
+.ab-frame{max-width:1100px;margin:0 auto;background:#fff;border:1px solid rgba(64,104,184,.12);border-radius:6px;padding:16px;box-shadow:0 30px 70px -30px rgba(28,50,112,.28)}
+.ab-card{border-radius:4px;border:1px solid rgba(64,104,184,.12);background:linear-gradient(180deg,#fafbfd 0%,#eef6f8 100%);padding:clamp(40px,6vw,84px) clamp(20px,6vw,90px);text-align:center;display:flex;flex-direction:column;align-items:center}
+.ab-pill{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);background:#fff;border:1px solid rgba(64,104,184,.2);border-radius:99px;padding:6px 16px;margin-bottom:26px}
+.ab-card .h2{max-width:26ch;margin:0 auto}
+.ab-card .body{max-width:68ch;margin:26px auto 0;text-align:center}
+.ab-card .body p+p{margin-top:14px}
+.ab-card .about-ctas{justify-content:center;margin-top:34px}
