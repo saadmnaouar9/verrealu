@@ -294,7 +294,7 @@ def build_home():
     main = f'''
 <div class="marquee" aria-hidden="true"><div class="mtrack">{mq}{mq}</div></div>
 <section class="sec" aria-labelledby="ab-h"><div class="ab-split">
-  <div class="ab-media rv"><img src="{img('daa8147c')}" alt="Verre Alum Partner" loading="lazy"><div class="ab-badge"><b>Haut de gamme</b><span>Menuiserie aluminium</span></div></div>
+  <div class="ab-media rv"><img src="assets/img/about-facade.jpg" alt="Façade aluminium et verre" loading="lazy"><div class="ab-badge"><b>Haut de gamme</b><span>Menuiserie aluminium</span></div></div>
   <div class="ab-txt rv" style="--d:100ms">
     <div class="sl">Qui sommes-nous ?</div><h2 class="h2" id="ab-h">Verre Alum Partner, <em>menuiserie aluminium haut de gamme</em></h2>
     <div class="body">{''.join(f'<p>{E(x)}</p>' for x in paras[:2])}</div>
