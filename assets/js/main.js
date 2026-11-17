@@ -204,24 +204,6 @@
       }
     });
   }
-
-  /* ---------- custom cursor ---------- */
-  if (window.matchMedia && matchMedia('(pointer:fine)').matches && !reduce) {
-    var c = d.createElement('div'), r = d.createElement('div');
-    c.id = 'cur'; r.id = 'cur-ring'; d.body.appendChild(c); d.body.appendChild(r);
-    var x = -100, y = -100, rx = -100, ry = -100;
-    window.addEventListener('mousemove', function (e) { x = e.clientX; y = e.clientY; root.classList.add('cur-on'); }, { passive: true });
-    (function loop() {
-      rx += (x - rx) * .16; ry += (y - ry) * .16;
-      c.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%)';
-      r.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
-      requestAnimationFrame(loop);
-    })();
-    d.addEventListener('mouseover', function (e) {
-      var h = e.target.closest && e.target.closest('a,button,[data-lb],input,textarea,summary');
-      c.classList.toggle('hover', !!h); r.classList.toggle('hover', !!h);
-    });
-  }
 })();
 
 /* Profilés & schémas spotlight */

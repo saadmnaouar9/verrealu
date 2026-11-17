@@ -28,16 +28,6 @@ h1,h2,h3,h4{font-weight:200}
 .skip{position:absolute;left:-999px;top:8px;background:#000;color:#fff;padding:10px 16px;z-index:9999;font-size:12px}
 .skip:focus{left:8px}
 
-/* ---------- custom cursor (fine pointers only, enabled by JS) ---------- */
-@media (pointer:fine){
-  html.cur-on body,html.cur-on a,html.cur-on button{cursor:none!important}
-  #cur,#cur-ring{position:fixed;top:0;left:0;z-index:99999;pointer-events:none;border-radius:50%;mix-blend-mode:difference;transform:translate(-50%,-50%);will-change:transform}
-  #cur{width:10px;height:10px;background:#fff;transition:opacity .2s}
-  #cur-ring{width:34px;height:34px;border:.7px solid rgba(255,255,255,.6);transition:width .3s var(--ease),height .3s var(--ease),opacity .2s}
-  #cur.hover{opacity:0}#cur-ring.hover{width:52px;height:52px;border-color:#fff}
-}
-@media (pointer:coarse){#cur,#cur-ring{display:none!important}}
-
 /* ---------- navigation ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);border-bottom:.5px solid var(--br);background:rgba(242,241,238,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background .5s,border-color .5s,color .5s}
 .nav-logo{display:flex;flex-direction:column;gap:3px;color:var(--t1)}
@@ -625,10 +615,11 @@ html:not(.js) .rv{opacity:1;transform:none}
 .pt-t:hover span{opacity:1;transform:none}.pt-t:hover::after{transform:none}
 
 /* Home — about block (centered card) */
-.ab-frame{max-width:1100px;margin:0 auto}
-.ab-card{border-radius:4px;border:1px solid rgba(64,104,184,.12);background:linear-gradient(180deg,#fafbfd 0%,#eef6f8 100%);padding:clamp(40px,6vw,84px) clamp(20px,6vw,90px);text-align:center;display:flex;flex-direction:column;align-items:center}
+[aria-labelledby="ab-h"]{padding-left:0;padding-right:0}
+.ab-frame{width:100%;max-width:none;margin:0}
+.ab-card{border-radius:0;border:0;border-top:1px solid rgba(64,104,184,.12);border-bottom:1px solid rgba(64,104,184,.12);background:linear-gradient(180deg,#fafbfd 0%,#eef6f8 100%);padding:clamp(40px,6vw,84px) clamp(20px,6vw,90px);text-align:center;display:flex;flex-direction:column;align-items:center}
 .ab-pill{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);background:#fff;border:1px solid rgba(64,104,184,.2);border-radius:99px;padding:6px 16px;margin-bottom:26px}
 .ab-card .h2{max-width:26ch;margin:0 auto}
-.ab-card .body{max-width:68ch;margin:26px auto 0;text-align:center}
+.ab-card .body{max-width:88ch;margin:26px auto 0;text-align:center}
 .ab-card .body p+p{margin-top:14px}
 .ab-card .about-ctas{justify-content:center;margin-top:34px}
