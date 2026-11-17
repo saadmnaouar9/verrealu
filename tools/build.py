@@ -235,14 +235,13 @@ def gal_btn(p, key, alt, cls=''):
 def build_home():
     p = ''
     slides = [
-        ('ARCHITECTURE ALUMINIUM', 'assets/img/hero2-poster.jpg', 'assets/video/hero2.mp4'),
         ('ARCHITECTURE DE LUXE', 'assets/img/hero3-poster.jpg', 'assets/video/hero3.mp4')]
     sl = ''.join(
-        f'<div class="hslide has-video" data-cap="{E(c)}" style="background-image:url({po})"><video muted playsinline preload="{"auto" if n == 0 else "metadata"}"{" autoplay" if n == 0 else ""} poster="{po}" aria-hidden="true"><source src="{vd}" type="video/mp4"></video></div>'
+        f'<div class="hslide has-video" data-cap="{E(c)}" style="background-image:url({po})"><video muted loop playsinline preload="{"auto" if n == 0 else "metadata"}"{" autoplay" if n == 0 else ""} poster="{po}" aria-hidden="true"><source src="{vd}" type="video/mp4"></video></div>'
         for n, (c, po, vd) in enumerate(slides))
     dots = ''.join(f'<button class="hdot" type="button" aria-label="{E(c)}"></button>' for c, _, _ in slides)
     hero = f'''<section class="hero" aria-label="Accueil">
-  <div class="hero-bg">{sl}</div><div class="hero-ov"></div><div class="hero-dots">{dots}</div>
+  <div class="hero-bg">{sl}</div><div class="hero-ov"></div>
   <div class="hc tl">Casablanca · Maroc</div><div class="hc tr">Cortizo · Albert Genau · C3A</div>
   <div class="hero-cnt">
     <div class="hero-ey">Verre Alum Partner</div>
